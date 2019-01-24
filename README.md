@@ -13,3 +13,11 @@
 - [x] 项目基础配置
 - [x] 首页获取城市列表
 
+
+
+## 说明
+
+- 为规范代码使用`ESLint`和`Prettier`，配置有待完善，在项目进行过程中逐渐完善
+- `vw`计算使用`PostCSS`插件来完成
+- 项目功能参考[bailicangdu/**vue2-elm**](https://github.com/bailicangdu/vue2-elm)，疑难处学习参考代码，然后自己理解后实现代码
+
