@@ -45,6 +45,18 @@ figcaption {
   }
 }
 
+input[type='button'],
+input[type='submit'],
+input[type='search'],
+input[type='reset'],
+input {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
 body,
 html {
   @include wh(100%, 100%);

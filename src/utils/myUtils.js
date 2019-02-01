@@ -22,7 +22,7 @@ export const getStore = name => {
  */
 export const removeStore = name => {
   if (!name) return
-  return window.localStoreage.removeItem(name)
+  return window.localStorage.removeItem(name)
 }
 
 /**
@@ -59,7 +59,7 @@ export const loadMore = (element, callback) => {
     () => {
       loadMore()
     },
-    false,
+    false
   )
   // 运动开始时获取元素 高度 和 offseTop, padding, margin
   element.addEventListener(
@@ -70,7 +70,7 @@ export const loadMore = (element, callback) => {
       paddingBottom = getStyle(element, 'paddingBottom')
       marginBottom = getStyle(element, 'marginBottom')
     },
-    { passive: true },
+    { passive: true }
   )
 
   // 运动过程中保持监听 scrollTop 的值判断是否到达底部
@@ -79,7 +79,7 @@ export const loadMore = (element, callback) => {
     () => {
       loadMore()
     },
-    { passive: true },
+    { passive: true }
   )
 
   // 运动结束时判断是否有惯性运动，惯性运动结束判断是否到达底部
@@ -89,7 +89,7 @@ export const loadMore = (element, callback) => {
       oldScrollTop = document.body.scrollTop
       moveEnd()
     },
-    { passive: true },
+    { passive: true }
   )
 
   const moveEnd = () => {
@@ -108,7 +108,10 @@ export const loadMore = (element, callback) => {
   }
 
   const loadMore = () => {
-    if (document.body.scrollTop + windowHeight > height + setTop + paddingBottom + marginBottom) {
+    if (
+      document.body.scrollTop + windowHeight >
+      height + setTop + paddingBottom + marginBottom
+    ) {
       callback()
     }
   }

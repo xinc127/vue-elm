@@ -8,15 +8,15 @@
         <span>当前定位城市是：</span>
         <span>定位不准时，请在城市列表中选择</span>
       </div>
-      <router-link to="" class="guess_city">
+      <router-link :to="{ name: 'city', params: { cityid: guessId } }" class="guess_city">
         <span>{{ guessCity }}</span>
       </router-link>
     </nav>
-
+    <img src="" alt="" />
     <section class="hot_city_container">
       <h4>热门城市</h4>
       <ul>
-        <router-link tag="li" v-for="item in hotCities" :key="item.id" to="" class="city_box">
+        <router-link tag="li" v-for="item in hotCities" :key="item.id" :to="{ name: 'city', params: { cityid: item.id } }" class="city_box">
           {{ item.name }}
         </router-link>
       </ul>
@@ -26,7 +26,7 @@
         <li class="city_group" v-for="(item, key, index) in sortGroupCities" :key="index">
           <h4>{{ key }}<span v-if="index === 0">(按字母顺序排序)</span></h4>
           <ul>
-            <router-link tag="li" v-for="items in item" to="" class="city_box">
+            <router-link tag="li" v-for="items in item" :key="items.id" :to="{ name: 'city', params: { cityid: items.id } }" class="city_box">
               {{ items.name }}
             </router-link>
           </ul>
@@ -116,6 +116,7 @@ export default {
   .guess_city {
     padding: 0 14px 0 12px;
     line-height: 41px;
+    display: block;
     span {
       @include sc(16px, $blue);
     }

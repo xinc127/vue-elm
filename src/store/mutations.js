@@ -1,4 +1,4 @@
-import { RECORD_ADDRESS } from './mutations-type.js'
+import { RECORD_ADDRESS, SAVE_GEOHASH } from './mutations-type.js'
 
 export default {
   // 记录当前经纬度
@@ -6,4 +6,8 @@ export default {
     state.latitude = latitude
     state.longitude = longitude
   },
+  // 保存geohash
+  [SAVE_GEOHASH](state, geohash) {
+    state.geohash = geohash
+  }
 }

@@ -2,42 +2,62 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
-  extends: ['plugin:vue/strongly-recommended', '@vue/prettier'],
+  extends: ['standard', 'plugin:vue/strongly-recommended', '@vue/prettier'],
   plugins: ['vue'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'none',
+        bracketSpacing: true,
+        jsxBracketSameLine: true,
+        parser: 'flow'
+      }
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
-    // 元素单行显示
+    // 元素>单行显示
     'vue/html-closing-bracket-newline': [
       'error',
       {
         singleline: 'never',
-        multiline: 'never',
-      },
+        multiline: 'never'
+      }
     ],
-    // 元素关闭
+    // 单元素关闭
     'vue/html-self-closing': [
       'error',
       {
         html: {
           void: 'always',
-          normal: 'never',
-        },
-      },
+          normal: 'never'
+        }
+      }
     ],
     // 最多单行属性
     'vue/max-attributes-per-line': [
       'error',
       {
-        singleline: 3,
-      },
-    ],
+        singleline: 10,
+        multiline: {
+          max: 10,
+          allowFirstLine: false
+        }
+      }
+    ]
   },
   parserOptions: {
-    parser: 'babel-eslint',
-  },
+    parser: 'babel-eslint'
+    // ecmaVersion: 8,
+    // sourceType: 'module',
+    // ecmaFeatures: {
+    //   jsx: true,
+    //   modules: true,
+    //   experimentalObjectRestSpread: true,
+    // },
+  }
 }

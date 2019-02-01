@@ -7,13 +7,26 @@ const routes = [
   // 空地址跳转至home页面
   {
     path: '',
-    redirect: '/home',
+    redirect: '/home'
   },
   // 首页城市列表
   {
+    name: 'home',
     path: '/home',
-    component: () => import('./views/Home/index.vue'),
+    component: () => import('./views/home/home.vue')
   },
+  // 当前选择城市页面
+  {
+    name: 'city',
+    path: '/city/:cityid',
+    component: () => import('./views/city/city.vue')
+  },
+  // 全部店铺列表页
+  {
+    name: 'msite',
+    path: '/msite/',
+    component: () => import('./views/msite/msite.vue')
+  }
 ]
 
 const router = new Router({
@@ -30,7 +43,7 @@ const router = new Router({
       }
       return { x: 0, y: to.meta.savedPosition || 0 }
     }
-  },
+  }
 })
 
 export default router
