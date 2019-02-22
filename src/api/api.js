@@ -52,3 +52,36 @@ export function msiteFoodType() {
     url: '/v2/index_entry'
   })
 }
+
+/**
+ * 获取商铺列表
+ */
+export function shopList(latitude, longitude, offset, limit, restaurant_category_id, order_by, delivery_mode, support_ids, restaurant_category_ids) {
+  return request({
+    url: '/shopping/restaurants',
+    params: {
+      latitude,
+      longitude,
+      offset,
+      limit,
+      restaurant_category_id,
+      order_by,
+      delivery_mode,
+      support_ids,
+      restaurant_category_ids,
+    }
+  })
+}
+
+/**
+ * 获取商铺分类列表
+ */
+export function getShopTypes(latitude, longitude) {
+  return request({
+    url: '/shopping/v2/restaurant/category',
+    params: {
+      latitude,
+      longitude,
+    }
+  })
+}

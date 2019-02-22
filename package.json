@@ -4,25 +4,27 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build ",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "element-ui": "^2.4.11",
-    "vue": "^2.5.21",
+    "element-ui": "^2.5.4",
+    "swiper": "^4.4.6",
+    "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.3.1",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
-    "cssnano": "^4.1.8",
-    "cssnano-preset-advanced": "^4.0.6",
-    "eslint": "^5.12.1",
+    "chalk": "^2.4.2",
+    "cssnano": "^4.1.9",
+    "cssnano-preset-advanced": "^4.0.7",
+    "eslint": "^5.13.0",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^5.1.0",
@@ -36,6 +38,6 @@
     "postcss-write-svg": "^3.0.1",
     "sass-loader": "^7.1.0",
     "standard": "^12.0.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.6"
   }
 }

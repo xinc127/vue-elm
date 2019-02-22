@@ -76,3 +76,10 @@ $fc: #fff;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+// 图片固定宽高内居中显示
+@mixin coverimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

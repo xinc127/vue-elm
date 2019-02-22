@@ -12,12 +12,18 @@
       </section>
       <slot name="msiteTitle"></slot>
       <slot name="changeCity"></slot>
+      <router-link :to="userInfo ? {name: 'center'} : {name: 'login'}" v-if="signUp" class="head_login">
+        <div v-if="userInfo">已登录</div>
+        <span v-else class="login_span">登录/注册</span>
+      </router-link>
     </header>
     <div class="clear_header"></div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Header',
   // props: ['headTitle', 'headBack'],
@@ -27,16 +33,23 @@ export default {
       default: '',
     },
     headBack: Boolean,
+    signUp: Boolean,
+  },
+  computed: {
+    ...mapState(['userInfo']),
+  },
+  data() {
+    return {}
   },
 }
 </script>
 
 <style lang="scss" scoped>
-header {
+#header-top {
   @include wh(100%, 46px);
   background-color: $blue;
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   top: 0;
   left: 0;
   .head_title {
@@ -44,7 +57,7 @@ header {
     text-align: center;
     .title_text {
       @include sc(18px, #fff);
-      font-weight: 600;
+      font-weight: 700;
     }
   }
   .head_back {
@@ -52,6 +65,13 @@ header {
     left: 12px;
     img {
       width: 16px;
+    }
+  }
+  .head_login {
+    @include ct;
+    right: 12px;
+    span {
+      @include sc(14px, #fff);
     }
   }
 }

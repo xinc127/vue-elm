@@ -1,5 +1,7 @@
 module.exports = {
+  productionSourceMap: false,
   css: {
+    extract: false,
     // css预处理配置
     loaderOptions: {
       sass: {

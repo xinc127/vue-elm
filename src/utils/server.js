@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: 'http://cangdu.org:8001',
+  baseURL: process.env.VUE_APP_BASEURL,
   timeout: 5000
 })
 

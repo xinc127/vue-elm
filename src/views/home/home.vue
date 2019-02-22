@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header>
+    <Header :sign-up="true">
       <h4 slot="logo" class="header_logo" @click="reload">ele.me</h4>
     </Header>
     <nav class="city_nav">
@@ -100,12 +100,12 @@ export default {
 
 .city_nav {
   background-color: #fff;
-  border-bottom: 2px solid #e3e3e3;
+  border-bottom: 2px solid $bc;
   .city_tip {
     @include fj;
     padding: 0 12px;
     line-height: 44px;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid $bc;
     span:nth-child(1) {
       @include sc(12px, #666);
     }
@@ -124,14 +124,14 @@ export default {
 }
 .hot_city_container,
 .group_city_container {
-  border-top: 2px solid #e3e3e3;
+  border-top: 2px solid $bc;
   background-color: #fff;
   margin-top: 10px;
   h4 {
     @include sc(12px, #666);
     line-height: 30px;
     padding-left: 10px;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid $bc;
   }
   ul {
     @include clearfix;
@@ -142,14 +142,14 @@ export default {
       @include wh(25%, 40px);
       @include sc(14px, $blue);
       @include nowrap;
-      border-right: 1px solid #e3e3e3;
-      border-bottom: 1px solid #e3e3e3;
+      border-right: 1px solid $bc;
+      border-bottom: 1px solid $bc;
     }
   }
 }
 .group_city_container {
   li.city_group {
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid $bc;
   }
   li.city_box {
     color: #666 !important;

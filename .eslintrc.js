@@ -1,8 +1,10 @@
+/** @format */
+
 // .eslintrc.js
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: ['standard', 'plugin:vue/strongly-recommended', '@vue/prettier'],
   plugins: ['vue'],
@@ -14,8 +16,10 @@ module.exports = {
         trailingComma: 'none',
         bracketSpacing: true,
         jsxBracketSameLine: true,
-        parser: 'flow'
-      }
+        parser: 'flow',
+        insertPragma: true,
+        requirePragma: true,
+      },
     ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -25,33 +29,34 @@ module.exports = {
       'error',
       {
         singleline: 'never',
-        multiline: 'never'
-      }
+        multiline: 'never',
+      },
     ],
     // 单元素关闭
     'vue/html-self-closing': [
       'error',
       {
         html: {
-          void: 'always',
-          normal: 'never'
-        }
-      }
+          void: 'always', // 空元素(不包含内容)
+          normal: 'never',
+          component: 'never', // 自定义组件
+        },
+      },
     ],
     // 最多单行属性
     'vue/max-attributes-per-line': [
       'error',
       {
-        singleline: 10,
+        singleline: 20,
         multiline: {
-          max: 10,
-          allowFirstLine: false
-        }
-      }
-    ]
+          max: 20,
+          allowFirstLine: false,
+        },
+      },
+    ],
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
     // ecmaVersion: 8,
     // sourceType: 'module',
     // ecmaFeatures: {
@@ -59,5 +64,5 @@ module.exports = {
     //   modules: true,
     //   experimentalObjectRestSpread: true,
     // },
-  }
+  },
 }
