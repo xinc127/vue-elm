@@ -13,7 +13,7 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: 'none',
+        trailingComma: 'all',
         bracketSpacing: true,
         jsxBracketSameLine: true,
         parser: 'flow',
@@ -39,7 +39,7 @@ module.exports = {
         html: {
           void: 'always', // 空元素(不包含内容)
           normal: 'never',
-          component: 'never', // 自定义组件
+          component: 'any', // 自定义组件 any 不强制自我关闭
         },
       },
     ],
@@ -57,12 +57,5 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint',
-    // ecmaVersion: 8,
-    // sourceType: 'module',
-    // ecmaFeatures: {
-    //   jsx: true,
-    //   modules: true,
-    //   experimentalObjectRestSpread: true,
-    // },
   },
 }

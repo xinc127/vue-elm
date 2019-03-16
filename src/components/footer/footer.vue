@@ -2,7 +2,8 @@
   <div>
     <div class="footer_guide">
       <section @click="gotoAdress({ name: 'msite', query: {geohash} })">
-        <img :src="$route.path.includes('msite') ? `${publicPath}svg/elm-active.svg` : `${publicPath}svg/elm.svg`" alt="" />
+        <!-- <img :src="$route.path.includes('msite') ? `${publicPath}svg/elm-active.svg` : `${publicPath}svg/elm.svg`" alt="" /> -->
+        <svg-icon style="font-size: 16px;" :icon-class="'elm'"></svg-icon>
         <span>外卖</span>
       </section>
       <section @click="gotoAdress({ name: 'search', query: {geohash} })">

@@ -11,9 +11,7 @@ import headerTop from '@/components/header/header.vue'
 export default {
   name: 'Login',
   data() {
-    return {
-      key: value,
-    }
+    return {}
   },
   components: {
     headerTop,

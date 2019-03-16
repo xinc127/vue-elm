@@ -7,8 +7,8 @@ export function getCities(type) {
   return request({
     url: '/v1/cities',
     params: {
-      type
-    }
+      type,
+    },
   })
 }
 
@@ -17,7 +17,7 @@ export function getCities(type) {
  */
 export function getCityInfo(id) {
   return request({
-    url: `/v1/cities/${id}`
+    url: `/v1/cities/${id}`,
   })
 }
 
@@ -30,8 +30,8 @@ export function pois(city_id, keyword, type) {
     params: {
       city_id,
       keyword,
-      type
-    }
+      type,
+    },
   })
 }
 
@@ -40,7 +40,7 @@ export function pois(city_id, keyword, type) {
  */
 export function msiteAddress(geohash) {
   return request({
-    url: `/v2/pois/${geohash}`
+    url: `/v2/pois/${geohash}`,
   })
 }
 
@@ -49,14 +49,24 @@ export function msiteAddress(geohash) {
  */
 export function msiteFoodType() {
   return request({
-    url: '/v2/index_entry'
+    url: '/v2/index_entry',
   })
 }
 
 /**
  * 获取商铺列表
  */
-export function shopList(latitude, longitude, offset, limit, restaurant_category_id, order_by, delivery_mode, support_ids, restaurant_category_ids) {
+export function shopList(
+  latitude,
+  longitude,
+  offset,
+  limit,
+  restaurant_category_id,
+  order_by,
+  delivery_mode,
+  support_ids,
+  restaurant_category_ids,
+) {
   return request({
     url: '/shopping/restaurants',
     params: {
@@ -69,7 +79,7 @@ export function shopList(latitude, longitude, offset, limit, restaurant_category
       delivery_mode,
       support_ids,
       restaurant_category_ids,
-    }
+    },
   })
 }
 
@@ -82,6 +92,6 @@ export function getShopTypes(latitude, longitude) {
     params: {
       latitude,
       longitude,
-    }
+    },
   })
 }

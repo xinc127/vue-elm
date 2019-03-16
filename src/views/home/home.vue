@@ -58,9 +58,8 @@ export default {
     sortGroupCities() {
       let sortObj = {}
       for (let i = 65; i <= 90; i++) {
-        sortObj[String.fromCharCode(i)] = this.groupCities[
-          String.fromCharCode(i)
-        ]
+        const code = String.fromCharCode(i)
+        sortObj[code] = this.groupCities[code]
       }
       return sortObj
     },

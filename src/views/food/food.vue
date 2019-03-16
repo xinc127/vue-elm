@@ -71,6 +71,7 @@ export default {
     ...mapState(['latitude', 'longitude']),
   },
   mounted() {
+    console.log(this.sortType)
     this.initData()
   },
   methods: {

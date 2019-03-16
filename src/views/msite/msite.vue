@@ -13,7 +13,8 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <ul v-for="items in foodTypes" :key="items[0].id" class="swiper-slide">
-            <router-link :to="{ name: 'food', query: { geohash, title: item.title, restaurant_category_id: getCategoryId(item.link) } }" tag="li" v-for="item in items"
+            <router-link
+:to="{ name: 'food', query: { geohash, title: item.title, restaurant_category_id: getCategoryId(item.link) } }" tag="li" v-for="item in items"
               :key="item.id" class="swiper-item">
               <img :src='baseImgurl + item.image_url' alt="" />
               <p>{{ item.title }}</p>
